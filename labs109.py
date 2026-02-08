@@ -1,12 +1,12 @@
 def ryerson_letter_grade(n):
     if n < 50:
-        return 'F'
+        return "F"
     elif n > 89:
-        return 'A+'
+        return "A+"
     elif n > 84:
-        return 'A'
+        return "A"
     elif n > 79:
-        return 'A-'
+        return "A-"
     tens = n // 10
     ones = n % 10
     if ones < 3:
@@ -16,3 +16,11 @@ def ryerson_letter_grade(n):
     else:
         adjust = ""
     return "DCB"[tens - 5] + adjust
+
+
+def is_ascending(items):
+    for x in range(len(items) - 1):
+        if items[x] >= items[x + 1]:
+            return False
+
+    return True
