@@ -43,3 +43,19 @@ def only_odd_digits(n):
         if int(c) % 2 == 0:
             return False
     return True
+
+
+def is_cyclops(n):
+    s = str(n)
+    m = len(s) // 2
+
+    if len(s) % 2 != 1:
+        return False
+
+    if s[m] != "0":
+        return False
+
+    if "0" in s[:m] or "0" in s[m + 1 :]:
+        return False
+
+    return True
