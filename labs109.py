@@ -24,3 +24,16 @@ def is_ascending(items):
             return False
 
     return True
+
+
+def riffle(items, out=True):
+    o = []
+    y = len(items) // 2
+    if len(items) > 0:
+        for x in range(y):
+            if out:
+                o += [items[x], items[x + y]]
+            else:
+                o += [items[x + y], items[x]]
+
+    return o
