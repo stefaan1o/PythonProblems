@@ -35,5 +35,11 @@ def riffle(items, out=True):
                 o += [items[x], items[x + y]]
             else:
                 o += [items[x + y], items[x]]
-
     return o
+
+
+def only_odd_digits(n):
+    for c in str(n):
+        if int(c) % 2 == 0:
+            return False
+    return True
