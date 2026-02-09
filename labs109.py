@@ -59,3 +59,15 @@ def is_cyclops(n):
         return False
 
     return True
+
+
+# 6.
+def domino_cycle(tiles):
+    if len(tiles) == 0:
+        return True
+    if tiles[0][0] != tiles[-1][1]:
+        return False
+    for x in range(len(tiles) - 1):
+        if tiles[x][1] != tiles[x + 1][0]:
+            return False
+    return True
