@@ -1,3 +1,4 @@
+# 1
 def ryerson_letter_grade(n):
     if n < 50:
         return "F"
@@ -18,6 +19,7 @@ def ryerson_letter_grade(n):
     return "DCB"[tens - 5] + adjust
 
 
+# 2
 def is_ascending(items):
     for x in range(len(items) - 1):
         if items[x] >= items[x + 1]:
@@ -26,6 +28,7 @@ def is_ascending(items):
     return True
 
 
+# 3
 def riffle(items, out=True):
     o = []
     y = len(items) // 2
@@ -38,6 +41,7 @@ def riffle(items, out=True):
     return o
 
 
+# 4
 def only_odd_digits(n):
     for c in str(n):
         if int(c) % 2 == 0:
@@ -45,6 +49,7 @@ def only_odd_digits(n):
     return True
 
 
+# 5
 def is_cyclops(n):
     s = str(n)
     m = len(s) // 2
@@ -61,7 +66,7 @@ def is_cyclops(n):
     return True
 
 
-# 6.
+# 6
 def domino_cycle(tiles):
     if len(tiles) == 0:
         return True
