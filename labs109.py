@@ -76,3 +76,17 @@ def domino_cycle(tiles):
         if tiles[x][1] != tiles[x + 1][0]:
             return False
     return True
+
+
+# 7
+def colour_trio(colours):
+    def mix(c1, c2):
+        if c1 == c2:
+            return c1
+        return ({"r", "y", "b"} - {c1, c2}).pop()  # chatgpt
+
+    while len(colours) > 1:
+        colours = "".join(
+            mix(colours[i], colours[i + 1]) for i in range(len(colours) - 1)
+        )
+    return colours
