@@ -101,3 +101,17 @@ def count_dominators(items):
             out += 1
             max_so_far = x
     return out
+
+
+# 9
+def extract_increasing(digits):
+    out = []
+    previous = -1
+    current = 0
+    for c in digits:
+        current = 10 * current + int(c)
+        if current > previous:
+            out.append(current)
+            previous = current
+            current = 0
+    return out
