@@ -115,3 +115,17 @@ def extract_increasing(digits):
             previous = current
             current = 0
     return out
+
+
+# 10
+def words_with_letters(words, letters):
+    def is_subsequence(word, letters):
+        i = 0  # index into letters
+        for ch in word:
+            if i < len(letters) and ch == letters[i]:
+                i += 1
+            if i == len(letters):
+                return True
+        return i == len(letters)
+
+    return [word for word in words if is_subsequence(word, letters)]
