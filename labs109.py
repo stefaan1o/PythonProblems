@@ -90,3 +90,14 @@ def colour_trio(colours):
             mix(colours[i], colours[i + 1]) for i in range(len(colours) - 1)
         )
     return colours
+
+
+# 8
+def count_dominators(items):
+    max_so_far = float("-inf")
+    out = 0
+    for x in reversed(items):
+        if x > max_so_far:
+            out += 1
+            max_so_far = x
+    return out
