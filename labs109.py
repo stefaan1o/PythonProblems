@@ -146,13 +146,14 @@ def taxi_zum_zum(moves):
     }
 
     for move in moves:
-        heading = headings[0]
         if move == "R":
             headings.rotate(-1)
-        if move == "L":
+        elif move == "L":
             headings.rotate(1)
-        if move == "F":
-            position = position[0] + mm[heading][0], position[1] + mm[heading][1]
-        if move == "B":
-            position = position[0] - mm[heading][0], position[1] - mm[heading][1]
+        elif move in ["F", "B"]:
+            heading = headings[0]
+            dx, dy = mm[heading]
+            if move == "B":
+                dx, dy = -dx, -dy
+            position = position[0] + dx, position[1] + dy
     return position
