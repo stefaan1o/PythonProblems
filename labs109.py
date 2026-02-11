@@ -117,7 +117,7 @@ def extract_increasing(digits):
     return out
 
 
-# 10
+# 10 - solved by chatgpt
 def words_with_letters(words, letters):
     def is_subsequence(word, letters):
         i = 0  # index into letters
@@ -129,3 +129,30 @@ def words_with_letters(words, letters):
         return i == len(letters)
 
     return [word for word in words if is_subsequence(word, letters)]
+
+
+# 11
+def taxi_zum_zum(moves):
+    from collections import deque
+
+    position = (0, 0)
+
+    headings = deque("NESW")
+    mm = {
+        "N": (0, 1),
+        "E": (1, 0),
+        "S": (0, -1),
+        "W": (-1, 0),
+    }
+
+    for move in moves:
+        heading = headings[0]
+        if move == "R":
+            headings.rotate(-1)
+        if move == "L":
+            headings.rotate(1)
+        if move == "F":
+            position = position[0] + mm[heading][0], position[1] + mm[heading][1]
+        if move == "B":
+            position = position[0] - mm[heading][0], position[1] - mm[heading][1]
+    return position
