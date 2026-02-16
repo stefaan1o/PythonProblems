@@ -157,3 +157,13 @@ def taxi_zum_zum(moves):
                 dx, dy = -dx, -dy
             position = position[0] + dx, position[1] + dy
     return position
+
+
+# 12
+def give_change(amount, coins):
+    result = []
+    for coin in coins:
+        while amount >= coin:
+            result.append(coin)
+            amount -= coin
+    return result
